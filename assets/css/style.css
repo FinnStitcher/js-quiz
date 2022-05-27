@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* make everything 20% smaller than the gif
+i can scale it up later if need be */
+
+body {
+    font-size: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header div {
+    padding: 20px;
+}
+
+main {
+    width: 50%;
+    margin: 60px auto;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* CLASSES */
+
+.text-center {
+    text-align: center;
+};
+
+.wide-main {
+    width: 60%;
+}
