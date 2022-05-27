@@ -44,7 +44,7 @@ var questions = [
 ];
 
 var timerEl = document.querySelector("#timer");
-var timeRemaining = 3;
+var timeRemaining = 75;
 var timerIntervalID;
 // initializing an empty variable to hold the ID returned by the interval
 
