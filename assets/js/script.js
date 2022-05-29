@@ -70,13 +70,10 @@ function displayQuestion() {
     quizHeaderEl.textContent = currentQuestion.question;
 
     for (var i = 0; i < currentAnswers.length; i++) {
-        var answer = document.createElement("li");
+        var answer = document.querySelector(`#answer${i + 1}`);
         answer.textContent = currentAnswers[i];
-        answer.setAttribute("id", `answer${i + 1}`);
 
         answer.addEventListener("click", isCorrect);
-        
-        quizAnswersEl.appendChild(answer);
     };
 };
 
@@ -90,6 +87,9 @@ function isCorrect(event) {
     else {
         quizFeedbackEl.textContent = "Incorrect!";
     };
+
+    currentQuestionIndex++;
+    displayQuestion();
 };
 
 
