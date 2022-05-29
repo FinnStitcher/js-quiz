@@ -39,15 +39,15 @@ var quizFeedbackEl = document.querySelector("#feedback-text")
 
 function startGame() {
     timerEl.textContent = `Time: ${timeRemaining}`;
-    // timerIntervalID = setInterval(countdown, 1000);
+    timerIntervalID = setInterval(countdown, 1000);
     // will run countdown() every second
-    // technically i didn't need to move it into a different function but this is like, cleaner
-    // temporarily commented out because it bugs me having it in the background, remember to reenable
+    // technically i didn't need to move the countdown logic into a different function but this is like, cleaner
     
     displayQuestion();
 };
 
 function endGame() {
+    clearInterval(timerIntervalID);
     console.log("Dummy text! End condition met.");
 };
 
@@ -56,7 +56,6 @@ function countdown() {
     timerEl.textContent = `Time: ${timeRemaining}`;
 
     if (timeRemaining <= 0) {
-        clearInterval(timerIntervalID);
         endGame();
     };
 };
@@ -86,6 +85,7 @@ function isCorrect(event) {
     }
     else {
         quizFeedbackEl.textContent = "Incorrect!";
+        timeRemaining -= 10;
     };
 
     currentQuestionIndex++;
@@ -93,6 +93,7 @@ function isCorrect(event) {
         displayQuestion();
     } else {
         console.log("Out of questions; display change not yet implemented");
+        endGame();
     };
 };
 
