@@ -34,6 +34,7 @@ var timerIntervalID;
 
 var quizHeaderEl = document.querySelector("#question");
 var quizAnswersEl = document.querySelector("#answers");
+var quizFeedbackEl = document.querySelector("#feedback-text")
 
 
 function startGame() {
@@ -43,7 +44,7 @@ function startGame() {
     // technically i didn't need to move it into a different function but this is like, cleaner
     // temporarily commented out because it bugs me having it in the background, remember to reenable
     
-    displayQuestion(currentQuestionIndex);
+    displayQuestion();
 };
 
 function endGame() {
@@ -63,8 +64,8 @@ function countdown() {
 // need to decrement first, or it'll hold 3 for too long and won't display 0
 // then check if we've reached zero and stop the clock if so
 
-function displayQuestion(index) {
-    var currentQuestion = questions[index];
+function displayQuestion() {
+    var currentQuestion = questions[currentQuestionIndex];
     var currentAnswers = currentQuestion.answers;
     quizHeaderEl.textContent = currentQuestion.question;
 
@@ -72,21 +73,24 @@ function displayQuestion(index) {
         var answer = document.createElement("li");
         answer.textContent = currentAnswers[i];
         answer.setAttribute("id", `answer${i + 1}`);
+
+        answer.addEventListener("click", isCorrect);
         
         quizAnswersEl.appendChild(answer);
     };
-    // for each object in the questions array:
-        // print the question and answers to the page
-            // make sure each element has the correct classes
-            // make sure each answer as an ID, a1 through a4
-        // apply a click event listener to each button/list item/whatever
-            // when clicked, read the ID of the event.target
-            // compare it to the correct property of the current object
-                // if they match, return "Correct!"
-                // if they don't, return "Wrong!"
-                    // i'll figure out the display stuff later
-        // then that iteration ends and we go to the next question
-}
+};
+
+function isCorrect(event) {
+    var targetId = event.target.getAttribute("id");
+    var currentQuestion = questions[currentQuestionIndex];
+
+    if (targetId === currentQuestion.correct) {
+        quizFeedbackEl.textContent = "Correct!";
+    }
+    else {
+        quizFeedbackEl.textContent = "Incorrect!";
+    };
+};
 
 
 startGame();
