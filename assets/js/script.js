@@ -89,7 +89,11 @@ function isCorrect(event) {
     };
 
     currentQuestionIndex++;
-    displayQuestion();
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        console.log("Out of questions; display change not yet implemented");
+    };
 };
 
 
