@@ -27,6 +27,8 @@ var questions = [
 ];
 var currentQuestionIndex = 0;
 
+var scores = [];
+
 var timerEl = document.querySelector("#timer");
 var timeRemaining = 75;
 var timerIntervalID;
@@ -53,7 +55,7 @@ function endGame() {
     quizHeaderEl.textContent = "All done!";
     quizDivEl.innerHTML = `<p>Your final score is ${timeRemaining}.</p>`;
 
-    var submitFormEl = document.createElement("div");
+    var submitFormEl = document.createElement("form");
     var submitLabelEl = document.createElement("label");
     var submitInputEl = document.createElement("input");
     var submitButtonEl = document.createElement("button");
@@ -71,6 +73,9 @@ function endGame() {
     submitFormEl.appendChild(submitLabelEl);
     submitFormEl.appendChild(submitInputEl);
     submitFormEl.appendChild(submitButtonEl);
+
+    submitFormEl.addEventListener("submit", submitData);
+    // might want to pull this logic into a different function, but i'll leave it for now
 };
 
 function countdown() {
@@ -114,9 +119,20 @@ function isCorrect(event) {
     if (currentQuestionIndex < questions.length) {
         displayQuestion();
     } else {
-        console.log("Out of questions; display change not yet implemented");
         endGame();
     };
+};
+
+function submitData(event) {
+    event.preventDefault();
+
+    var score = {
+        initials: document.querySelector("#initials").value,
+        score: timeRemaining
+    };
+    scores.push(score);
+
+    localStorage.setItem("quizscores", JSON.stringify(scores));
 };
 
 
