@@ -65,8 +65,8 @@ function endGame() {
     submitInputEl.setAttribute("name", "initials");
     submitInputEl.setAttribute("type", "text");
     submitButtonEl.setAttribute("type", "submit");
-    // add classes to elements here
-    // no idea why it didnt work
+    submitFormEl.classList = "score-submit flex-row";
+    submitButtonEl.classList = "btn small-btn";
 
     submitLabelEl.textContent = "Enter initials:";
     submitButtonEl.textContent = "Submit";

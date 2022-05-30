@@ -16,8 +16,11 @@ body {
     text-align: center;
 }
 
+.flex-row {
+    display: flex; flex-wrap: wrap;
+}
+
 header {
-    display: flex;
     justify-content: space-between;
     padding: 0 10px;
 }
@@ -34,33 +37,34 @@ header a {
 main {
     width: 50%;
     margin: 60px auto;
-}
-
-.wide-main {
-    width: 60%;
+    display: flow-root;
 }
 
 .page-text {
     margin: 20px 0 30px;
 }
 
-.fake-btn {
+.btn {
     display: inline-block;
     background: #351C75;
     color: white;
     text-decoration: none;
+}
+
+.big-btn {
     padding: 16px 40px;
     border-radius: 10px;
 }
 
-.real-btn {
-    appearance: none;
-    display: inline-block;
-    background: #351C75;
-    color: white;
-    text-decoration: none;
-    padding: 16px 40px;
-    border-radius: 10px;
+.small-btn {
+    font-size: 16px;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn:active {
+    background: #BD5BE3;
 }
 
 ol {
@@ -88,8 +92,7 @@ ol {
     padding: 15px 10px;
 }
 
-form {
-    display: flex;
+.score-submit {
     align-items: center;
     gap: 10px;
     margin-top: 12px;
@@ -98,6 +101,26 @@ form {
 input {
     height: 30px;
     width: 300px;
+}
+
+#scoreboard {
+    background: #D9D3E8;
+    margin: 14px 5px;
+}
+
+#scoreboard li {
+    padding: 6px 8px;
+}
+
+.scoreboard-btns {
+    margin-left: 5px;
+    gap: 8px;
+}
+
+@media screen and (max-width: 980px) {
+    main {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 768px) {
