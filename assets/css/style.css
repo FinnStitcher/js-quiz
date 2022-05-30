@@ -9,15 +9,26 @@ i can scale it up later if need be */
 
 body {
     font-size: 20px;
+    font-family: sans-serif;
+}
+
+.text-center {
+    text-align: center;
 }
 
 header {
     display: flex;
     justify-content: space-between;
+    padding: 0 10px;
 }
 
 header div {
     padding: 20px;
+}
+
+header a {
+    color: #B54BE5;
+    text-decoration: none;
 }
 
 main {
@@ -25,17 +36,44 @@ main {
     margin: 60px auto;
 }
 
-ul {
-    list-style: none;
-}
-
-
-/* CLASSES */
-
-.text-center {
-    text-align: center;
-};
-
 .wide-main {
     width: 60%;
+}
+
+.page-text {
+    margin: 20px 0 30px;
+}
+
+.fake-btn {
+    display: inline-block;
+    background: #351C75;
+    color: white;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 10px;
+}
+
+ol {
+    list-style-position: inside;
+    padding-bottom: 3px;
+}
+
+.answer {
+    background: #351C75;
+    color: white;
+    width: 30%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.feedback {
+    color: #989898;
+    font-style: italic;
+    font-size: 30px;
+    border-top: 2px solid;
+}
+
+.feedback p {
+    padding: 15px 10px;
 }
