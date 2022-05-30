@@ -33,8 +33,9 @@ var timerIntervalID;
 // initializing an empty variable to hold the ID returned by the interval
 
 var quizHeaderEl = document.querySelector("#question");
+var quizDivEl = document.querySelector("#answers-submit");
 var quizAnswersEl = document.querySelector("#answers");
-var quizFeedbackEl = document.querySelector("#feedback-text")
+var quizFeedbackEl = document.querySelector("#feedback-text");
 
 
 function startGame() {
@@ -48,7 +49,28 @@ function startGame() {
 
 function endGame() {
     clearInterval(timerIntervalID);
-    console.log("Dummy text! End condition met.");
+    
+    quizHeaderEl.textContent = "All done!";
+    quizDivEl.innerHTML = `<p>Your final score is ${timeRemaining}.</p>`;
+
+    var submitFormEl = document.createElement("div");
+    var submitLabelEl = document.createElement("label");
+    var submitInputEl = document.createElement("input");
+    var submitButtonEl = document.createElement("button");
+
+    submitLabelEl.setAttribute("for", "initials");
+    submitInputEl.setAttribute("id", "initials");
+    submitInputEl.setAttribute("name", "initials");
+    submitInputEl.setAttribute("type", "text");
+    submitButtonEl.setAttribute("type", "submit");
+
+    submitLabelEl.textContent = "Enter initials:";
+    submitButtonEl.textContent = "Submit";
+
+    quizDivEl.appendChild(submitFormEl);
+    submitFormEl.appendChild(submitLabelEl);
+    submitFormEl.appendChild(submitInputEl);
+    submitFormEl.appendChild(submitButtonEl);
 };
 
 function countdown() {
