@@ -53,6 +53,16 @@ main {
     border-radius: 10px;
 }
 
+.real-btn {
+    appearance: none;
+    display: inline-block;
+    background: #351C75;
+    color: white;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 10px;
+}
+
 ol {
     list-style-position: inside;
     padding-bottom: 3px;
@@ -61,7 +71,7 @@ ol {
 .answer {
     background: #351C75;
     color: white;
-    width: 30%;
+    width: 200px;
     padding: 10px 15px;
     margin: 10px 0;
     border-radius: 10px;
@@ -77,3 +87,31 @@ ol {
 .feedback p {
     padding: 15px 10px;
 }
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+input {
+    height: 30px;
+    width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+    #question {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #question {
+        font-size: 30px;
+    }
+}
+
+
+
+/* header text needs to be smaller on mobile devices */
