@@ -108,7 +108,7 @@ input {
     margin: 14px 5px;
 }
 
-#scoreboard li {
+#scoreboard li, #scoreboard p {
     padding: 6px 8px;
 }
 

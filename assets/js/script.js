@@ -125,7 +125,6 @@ function isCorrect(event) {
 
 function submitData(event) {
     event.preventDefault();
-    debugger;
 
     var score = {
         initials: document.querySelector("#initials").value,

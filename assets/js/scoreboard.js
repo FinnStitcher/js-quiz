@@ -1,4 +1,5 @@
 var scoreboardEl = document.querySelector("#scoreboard");
+var clearDataEl = document.querySelector("#clear-data");
 var savedScores = localStorage.getItem("quizscores");
 var scores;
 
@@ -18,5 +19,14 @@ function loadData() {
         scoreboardEl.appendChild(listItemEl);
     };
 };
+
+function clearData() {
+    debugger;
+    localStorage.setItem("quizscores", "");
+    savedScores = localStorage.getItem("quizscores");
+    loadData();
+};
+
+clearDataEl.addEventListener("click", clearData);
 
 loadData();
