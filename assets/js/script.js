@@ -27,8 +27,6 @@ var questions = [
 ];
 var currentQuestionIndex = 0;
 
-var scores = [];
-
 var timerEl = document.querySelector("#timer");
 var timeRemaining = 75;
 var timerIntervalID;
@@ -127,10 +125,18 @@ function isCorrect(event) {
 
 function submitData(event) {
     event.preventDefault();
+    debugger;
 
     var score = {
         initials: document.querySelector("#initials").value,
         score: timeRemaining
+    };
+
+    var savedScores = localStorage.getItem("quizscores");
+    if (!savedScores) {
+        var scores = [];
+    } else {
+        var scores = JSON.parse(savedScores);
     };
     scores.push(score);
 
