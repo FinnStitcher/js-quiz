@@ -10,4 +10,4 @@ This application can be viewed live at https://finnstitcher.github.io/js-quiz/. 
 
 Javascript, HTML, CSS
 
-![AwesomeScreenshot-6_2_2022,2 21 45AM](https://user-images.githubusercontent.com/104468624/171599392-ed27beb1-3671-4bd2-bef0-ccc16d07f3e3.gif)
+![AwesomeScreenshot-6_2_2022,2 21 45AM](https://user-images.githubusercontent.com/104468624/171599705-d457557b-e3b9-4ff7-8db1-d36abbad2553.gif)
