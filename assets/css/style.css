@@ -1,11 +1,13 @@
+:root {
+    --color-primary: #351C75;
+    --color-secondary: #B54BE5;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* make everything 20% smaller than the gif
-i can scale it up later if need be */
 
 body {
     font-size: 20px;
@@ -30,7 +32,7 @@ header div {
 }
 
 header a {
-    color: #B54BE5;
+    color: var(--color-secondary);
     text-decoration: none;
 }
 
@@ -50,7 +52,7 @@ main {
 
 .btn {
     display: inline-block;
-    background: #351C75;
+    background: var(--color-primary);
     color: white;
     text-decoration: none;
 }
@@ -67,22 +69,22 @@ main {
     border-radius: 8px;
 }
 
-.btn:active {
-    background: #BD5BE3;
-}
-
 ol {
     list-style-position: inside;
     padding-bottom: 3px;
 }
 
 .answer {
-    background: #351C75;
+    background: var(--color-primary);
     color: white;
     width: 200px;
     padding: 10px 15px;
     margin: 10px 0;
     border-radius: 10px;
+}
+
+.btn:active, .btn:hover, .answer:active, .answer:hover {
+    background: var(--color-secondary);
 }
 
 .feedback {
