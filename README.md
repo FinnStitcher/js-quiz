@@ -1,1 +1,7 @@
-# js-quiz
+# Description
+
+This is a simple, proof-of-concept quiz on basic concepts and practices of JavaScript. The quiz is timed; the time remaining at the end of the quiz is recorded as the player's score, and answering questions incorrectly decreases time by 10 seconds. This app also allows the player to save their score after a play session, which can then be viewed on a leaderboard page.
+
+# Made With
+
+Javascript, HTML, CSS
