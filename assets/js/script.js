@@ -163,4 +163,3 @@ function confirmSubmit() {
 
 
 startGame();
-endGame();

@@ -35,13 +35,17 @@ header a {
 }
 
 main {
+    display: flow-root;
     width: 50%;
     margin: 60px auto;
-    display: flow-root;
 }
 
 .page-text {
     margin: 20px 0 30px;
+}
+
+.page-text p {
+    margin: 6px 0;
 }
 
 .btn {
