@@ -10,6 +10,13 @@ function loadData() {
     };
     
     scores = JSON.parse(savedScores);
+    scores.sort(function (a, b) {
+        if (a.score < b.score) {
+            return 1;
+        } else {
+            return -1;
+        };
+    })
 
     for (var i = 0; i < scores.length; i++) {
         var currentScore = scores[i];

@@ -62,6 +62,8 @@ function endGame() {
     submitInputEl.setAttribute("id", "initials");
     submitInputEl.setAttribute("name", "initials");
     submitInputEl.setAttribute("type", "text");
+    submitInputEl.setAttribute("maxLength", 2);
+    submitInputEl.setAttribute("required", true);
     submitButtonEl.setAttribute("type", "submit");
     submitFormEl.classList = "score-submit flex-row";
     submitButtonEl.classList = "btn small-btn";
@@ -111,8 +113,9 @@ function isCorrect(event) {
         quizFeedbackEl.textContent = "Correct!";
     }
     else {
-        quizFeedbackEl.textContent = "Incorrect!";
         timeRemaining -= 10;
+        timerEl.textContent = `Time: ${timeRemaining}`;
+        quizFeedbackEl.textContent = "Incorrect!";
     };
 
     currentQuestionIndex++;
@@ -126,11 +129,20 @@ function isCorrect(event) {
 function submitData(event) {
     event.preventDefault();
 
-    var score = {
-        initials: document.querySelector("#initials").value,
-        score: timeRemaining
+    var initialsInput = document.querySelector("#initials");
+    var initials = initialsInput.value;
+
+    // checks if the value is actually letters
+    // this doesn't account for special characters, not sure how to do that currently
+    if (!isNaN(initials)) {
+        alert("Please enter initials.");
+        return false;
     };
 
+    var score = {
+        initials: initials.toUpperCase(),
+        score: timeRemaining
+    };
     var savedScores = localStorage.getItem("quizscores");
     if (!savedScores) {
         var scores = [];
@@ -138,9 +150,17 @@ function submitData(event) {
         var scores = JSON.parse(savedScores);
     };
     scores.push(score);
-
     localStorage.setItem("quizscores", JSON.stringify(scores));
+
+    confirmSubmit();
+    initialsInput.value = "";
+};
+
+function confirmSubmit() {
+    var paragraph = document.querySelector("#answers-submit p");
+    paragraph.insertAdjacentHTML("afterend", "<p>Your score has been recorded. <a href='./index.html'>Play again?</a></p>");
 };
 
 
 startGame();
+endGame();
