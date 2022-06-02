@@ -9,3 +9,5 @@ This application can be viewed live at https://finnstitcher.github.io/js-quiz/. 
 # Made With
 
 Javascript, HTML, CSS
+
+![AwesomeScreenshot-6_2_2022,2 21 45AM](https://user-images.githubusercontent.com/104468624/171599392-ed27beb1-3671-4bd2-bef0-ccc16d07f3e3.gif)
